@@ -60,7 +60,7 @@ namespace Snake
             }
 
         }
-        public void Steering(DIRECTION dir)
+        public void Go(DIRECTION dir)
         {
             if (dead == true) return;
 

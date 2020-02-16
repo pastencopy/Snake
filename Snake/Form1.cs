@@ -107,24 +107,30 @@ namespace Snake
             picCanvas.CreateGraphics().DrawImageUnscaled(drawImage, 0, 0);
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (e.KeyCode == Keys.NumPad4)
+            //화살표 이동키를 사용
+            if (keyData == Keys.NumPad4 || keyData == Keys.Left)
             {
-                snake.Steering(Snake.DIRECTION.LEFT);
+                snake.Go(Snake.DIRECTION.LEFT);
             }
-            else if (e.KeyCode == Keys.NumPad6)
+            else if (keyData == Keys.NumPad6 || keyData == Keys.Right)
             {
-                snake.Steering(Snake.DIRECTION.RIGHT);
+                snake.Go(Snake.DIRECTION.RIGHT);
             }
-            else if (e.KeyCode == Keys.NumPad8)
+            else if (keyData == Keys.NumPad8 || keyData == Keys.Up)
             {
-                snake.Steering(Snake.DIRECTION.UP);
+                snake.Go(Snake.DIRECTION.UP);
             }
-            else if (e.KeyCode == Keys.NumPad5)
+            else if (keyData == Keys.NumPad5 || keyData == Keys.Down)
             {
-                snake.Steering(Snake.DIRECTION.DOWN);
+                snake.Go(Snake.DIRECTION.DOWN);
             }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        private void picCanvas_Paint(object sender, PaintEventArgs e)
+        {
+            picCanvas.CreateGraphics().DrawImageUnscaled(drawImage, 0, 0);
         }
     }
 }
