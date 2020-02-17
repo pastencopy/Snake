@@ -5,11 +5,12 @@ Snake Game
 스네이크 게임
 
 
+ --> https://github.com/pastencopy/SimpleNeuralNetwork/Snake
 
-Moved : https://github.com/pastencopy/SimpleNeuralNetwork/Snake
+
+이동되었습니다.
 
 
-Snake Game : https://en.wikipedia.org/wiki/Snake_(video_game_genre)
 
 
 
